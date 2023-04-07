@@ -1,4 +1,4 @@
-import profile from "../assets/images/yana.jpg";
+import profile from "../assets/images/Yana.jpg";
 
 export default {
   profile,
