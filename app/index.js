@@ -3,6 +3,7 @@ import { View, Text, ScrollView, SafeAreaView } from "react-native";
 import { Stack, useRouter } from 'expo-router';
 
 import {COLORS, icons, images, SIZES} from '../constants';
+import ScreenHeaderBtn from '../components/common/header/ScreenHeaderBtn';
 
 
 const Home = () => {
@@ -16,8 +17,8 @@ const Home = () => {
                     headerStyle:{ backgroundColor:COLORS.lightWhite},
                     headerShadowVisible: false,
                     headerTitle: '',
-                    headerLeft: ()=> {return (<Text>Left Button</Text>)},
-                    headerRight: ()=> {return (<Text>Right Button</Text>)},
+                    headerLeft: () => (<ScreenHeaderBtn iconUrl={icons.menu} dimension='60%'/>),
+                    headerRight: ()=> (<ScreenHeaderBtn iconUrl={icons.profile} dimension='100%'/>),
                 }}
             />
             <ScrollView showsVerticalScrollIndicator={false}>
