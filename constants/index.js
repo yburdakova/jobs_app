@@ -2,4 +2,6 @@ import images from "./images";
 import icons from "./icons";
 import { COLORS, FONT, SIZES, SHADOWS } from "./theme";
 
-export { images, icons, COLORS, FONT, SIZES, SHADOWS };
+const jobTypes = ['Full-Time', 'Part-Time', 'Contract', 'Temporary'];
+
+export { images, icons, COLORS, FONT, SIZES, SHADOWS , jobTypes};
