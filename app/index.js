@@ -6,6 +6,7 @@ import {COLORS, icons, images, SIZES} from '../constants';
 import ScreenHeaderBtn from '../components/common/header/ScreenHeaderBtn';
 import Welcome from '../components/home/welcome/Welcome';
 import Popularjobs from '../components/home/popular/Popularjobs';
+import Nearbyjobs from '../components/home/nearby/Nearbyjobs';
 
 
 
@@ -30,9 +31,7 @@ const Home = () => {
                 <View style={{flex:1, padding:SIZES.medium}}>
                     <Welcome/>
                     <Popularjobs/>
-                    <Text>
-                        Nearby Jobs
-                    </Text>
+                    <Nearbyjobs/>
                 </View>
             </ScrollView>
         </SafeAreaView>
