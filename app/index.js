@@ -4,6 +4,8 @@ import { Stack, useRouter } from 'expo-router';
 
 import {COLORS, icons, images, SIZES} from '../constants';
 import ScreenHeaderBtn from '../components/common/header/ScreenHeaderBtn';
+import Welcome from '../components/home/welcome/Welcome';
+
 
 
 const Home = () => {
@@ -18,14 +20,12 @@ const Home = () => {
                     headerShadowVisible: false,
                     headerTitle: '',
                     headerLeft: () => (<ScreenHeaderBtn iconUrl={icons.menu} dimension='60%'/>),
-                    headerRight: ()=> (<ScreenHeaderBtn iconUrl={icons.profile} dimension='100%'/>),
+                    headerRight: ()=> (<ScreenHeaderBtn iconUrl={images.profile} dimension='100%'/>),
                 }}
             />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{flex:1, padding:SIZES.medium}}>
-                    <Text>
-                        Wellcome
-                    </Text>
+                    <Welcome/>
                     <Text>
                         Popular Jobs
                     </Text>
