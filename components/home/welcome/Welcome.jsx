@@ -8,7 +8,7 @@ import { icons, SIZES, jobTypes} from '../../../constants';
 const Welcome = () => {
 
     const [value, setValue] = useState('')
-
+    const [activeJobType, setActiveJobType] = useState('Full-time')
     const router = useRouter();
 
     return (
@@ -41,14 +41,21 @@ const Welcome = () => {
                 <FlatList
                     data={jobTypes}
                     renderItem={({ item }) => (
-                        <TouchableOpacity>
-                            <Text >
+                        <TouchableOpacity
+                            style={styles.tab(activeJobType, item)}
+                            onPress={()=> {
+                                setActiveJobType(item);
+                                router.push(`/search/${item}`)}}
+                        >
+                            <Text style={styles.tabText(activeJobType, item)} >
                                 {item}
                             </Text>
                         </TouchableOpacity>
                     )}
                     keyExtractor={(item) => item}
                     contentContainerStyle={{ columnGap: SIZES.small }}
+                    horizontal
+                    
                 />
             </View>
 

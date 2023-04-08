@@ -5,6 +5,9 @@ import { Stack, useRouter } from 'expo-router';
 import {COLORS, icons, images, SIZES} from '../constants';
 import ScreenHeaderBtn from '../components/common/header/ScreenHeaderBtn';
 import Welcome from '../components/home/welcome/Welcome';
+import Popularjobs from '../components/home/popular/Popularjobs';
+
+
 
 
 
@@ -26,9 +29,7 @@ const Home = () => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{flex:1, padding:SIZES.medium}}>
                     <Welcome/>
-                    <Text>
-                        Popular Jobs
-                    </Text>
+                    <Popularjobs/>
                     <Text>
                         Nearby Jobs
                     </Text>
