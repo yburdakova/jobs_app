@@ -36,10 +36,11 @@ const Popularjobs = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.cardsContainer}>
-                {isLoading
-                ? (<ActivityIndicator size='large' color={COLORS.primary}/>)
-                : error ? (<Text>Something wrong</Text>) : (
-                    <FlatList
+                {isLoading ? 
+                    (<ActivityIndicator size='large' color={COLORS.primary}/>)
+                : error ? 
+                    (<Text>Something wrong</Text>) 
+                : ( <FlatList
                         data={data}
                         renderItem={({ item }) => (
                             <PopularjobCard
