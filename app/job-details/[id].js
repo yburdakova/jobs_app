@@ -55,6 +55,7 @@ const JobDetails = () => {
                         (<Text>No data</Text>)
                     : (<View style={{ padding:SIZES.medium, paddingBottom: 100}}>
                             <Text>JOB DETAILS WILL BE HERE</Text>
+                            
                         </View>)
                     }
                 </ScrollView>
