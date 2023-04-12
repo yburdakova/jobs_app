@@ -5,6 +5,7 @@ import { useRouter } from 'expo-router';
 import styles from './welcome.style';
 import { icons, SIZES, jobTypes} from '../../../constants';
 
+
 const Welcome = () => {
 
     const [value, setValue] = useState('')

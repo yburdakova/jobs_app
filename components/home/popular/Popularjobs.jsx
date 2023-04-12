@@ -4,17 +4,20 @@ import { useRouter } from 'expo-router';
 
 import styles from './popularjobs.style';
 import { COLORS, SIZES } from '../../../constants';
-import useFetch from '../../../hook/useFetch';
-import PopularjobCard from './PopularjobCard'
+// import useFetch from '../../../hook/useFetch';
+import PopularjobCard from './PopularjobCard';
+import {data} from '../../../api/jobit.json';
 
 const Popularjobs = () => {
     const router = useRouter();
-    const {data, isLoading, error} = useFetch('search', {
-        query: 'Frontend developer',
-        num_pages: 1
-    })
+    const isLoading = false;
+    const error = false;
+    
+    // const {data, isLoading, error} = useFetch('search', {
+    //     query: 'Frontend developer',
+    //     num_pages: 1
+    // })
 
-    console.log(data);
 
     const [selectedJob, setSelectedJob] = useState();
 

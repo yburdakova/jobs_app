@@ -5,16 +5,18 @@ import { useRouter } from 'expo-router';
 import styles from './nearbyjobs.style';
 import { COLORS } from '../../../constants';
 import useFetch from '../../../hook/useFetch';
-import NearbyjobsCard from './NearbyjobsCard'
+import NearbyjobsCard from './NearbyjobsCard';
+import {data} from '../../../api/jobit.json';
 
 const Nearbyjobs = () => {
     const router = useRouter();
-    const {data, isLoading, error} = useFetch('search', {
-        query: 'Frontend developer',
-        num_pages: 1
-    })
+    const isLoading = false;
+    const error = false;
 
-    console.log(data);
+    // const {data, isLoading, error} = useFetch('search', {
+    //     query: 'Frontend developer',
+    //     num_pages: 1
+    // })
 
     const [selectedJob, setSelectedJob] = useState();
 
