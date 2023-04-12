@@ -22,6 +22,7 @@ const JobDetails = () => {
     const isLoading = false;
     const error = false;
 
+    console.log(params.id);
 /*     const {data, isLoading, error, refetch} = useFetch('job-details', {
         job_id:params.id
     }) */
@@ -30,13 +31,17 @@ const JobDetails = () => {
     const displayTabContent = () => {
         switch (activeTab) {
             case 'About':
-                return <About/>
+                return <About 
+                            info={data[0].job_description ?? 'No data provided'}/>
             case 'Qualifications':
                 return <Specifics
                             title='Qualifications' 
                             points ={data[0].job_highlights?.Qualifications ?? ['N/A']}/>
-            
             case 'Responsibilites':
+                return <Specifics
+                            title='Responsibilites' 
+                            points ={data[0].job_highlights?.Responsibilities ?? ['N/A']}/>
+
         }
     }
 
