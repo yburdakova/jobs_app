@@ -6,7 +6,8 @@ import styles from './nearbyjobs.style';
 import { COLORS } from '../../../constants';
 import useFetch from '../../../hook/useFetch';
 import NearbyjobsCard from './NearbyjobsCard';
-import {data} from '../../../api/jobit.json';
+import {data} from '../../../api/fakeAPI'
+import dataBase from '../../../api/fakeAPI';
 
 const Nearbyjobs = () => {
     const router = useRouter();
@@ -41,7 +42,7 @@ const Nearbyjobs = () => {
                 {isLoading
                 ? (<ActivityIndicator size='large' color={COLORS.primary}/>)
                 : error ? (<Text>Something wrong</Text>) : (
-                    data?.map ((job) => (
+                    dataBase.data?.map ((job) => (
                         <NearbyjobsCard 
                             job={job}
                             key={`nearby-job-${job.job_id}`}

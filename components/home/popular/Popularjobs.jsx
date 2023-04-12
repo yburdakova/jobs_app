@@ -6,7 +6,7 @@ import styles from './popularjobs.style';
 import { COLORS, SIZES } from '../../../constants';
 // import useFetch from '../../../hook/useFetch';
 import PopularjobCard from './PopularjobCard';
-import {data} from '../../../api/jobit.json';
+import dataBase from '../../../api/fakeAPI';
 
 const Popularjobs = () => {
     const router = useRouter();
@@ -44,7 +44,7 @@ const Popularjobs = () => {
                 : error ? 
                     (<Text>Something wrong</Text>) 
                 : ( <FlatList
-                        data={data}
+                        data={dataBase.data}
                         renderItem={({ item }) => (
                             <PopularjobCard
                                 item={item}

@@ -3,8 +3,7 @@ import { Stack, useRouter, useSearchParams } from 'expo-router';
 import { useCallback, useState } from 'react';
 
 import { COLORS, icons, jobTabs, SIZES } from '../../constants';
-import {data} from '../../api/jobit.json';
-import useFetch from '../../hook/useFetch';
+import useFetch from '../../hook/useFetchTemp';
 import ScreenHeaderBtn from '../../components/common/header/ScreenHeaderBtn';
 import Company from '../../components/jobdetails/Company';
 import JobTabs from '../../components/jobdetails/JobTabs';
@@ -19,13 +18,10 @@ const JobDetails = () => {
 
     const params = useSearchParams();
     const router = useRouter();
-    const isLoading = false;
-    const error = false;
 
-    console.log(params.id);
-/*     const {data, isLoading, error, refetch} = useFetch('job-details', {
+    const {data, isLoading, error, refetch} = useFetch('job-details', {
         job_id:params.id
-    }) */
+    }) 
     const onRefresh = () => {}
 
     const displayTabContent = () => {

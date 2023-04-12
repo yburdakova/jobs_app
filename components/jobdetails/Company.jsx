@@ -11,7 +11,7 @@ const Company = ({companyLogo, jobTitle, companyName, location}) => {
         <View style={styles.container}>
             <View style={styles.logoBox}>
                 <Image 
-                    source={{ uri: checkImageURL(companyLogo) ? companyLogo : defaulCompanyLogo,}}
+                    source={{ uri: companyLogo ? companyLogo : defaulCompanyLogo,}}
                     resizeMode='contain'
                     style={styles.logoImage}
                 />

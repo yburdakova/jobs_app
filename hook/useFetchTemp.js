@@ -1,35 +1,25 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import json from '../api/jobit.json'
+import dataBase from "../api/fakeAPI";
 
 const useFetch = (endpoint, query) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-    
 
     const options = {
-        method: "GET",
-        url: `https://jsearch.p.rapidapi.com/${endpoint}`,
-        headers: {
-            "X-RapidAPI-Key": '77022cedf4mshb36650fd7440662p1621e7jsn54459c9c1105',
-            "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-        },
+        url: `/{endpoint}`,
         params: { ...query },
     };
-
-
+    
     const fetchData = async () => {
         setIsLoading(true);
-
+        const response = dataBase.data.filter(item => item.job_id === query.job_id)
         try {
-        const response = options;
-
-        setData(response.data.data);
+        setData(response);
         setIsLoading(false);
         } catch (error) {
         setError(error);
-            alert(error.message);
+            alert("ERRROR!!!");
         } finally {
         setIsLoading(false);
         }
