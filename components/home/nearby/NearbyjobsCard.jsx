@@ -7,7 +7,7 @@ import { defaulCompanyLogo } from "../../../constants";
 
 
 const NearbyJobCard = ({ job, handleNavigate }) => {
-    console.log(job);
+
 
     return (
         <TouchableOpacity style={styles.container} onPress={handleNavigate}>

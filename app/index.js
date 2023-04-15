@@ -13,7 +13,7 @@ import Nearbyjobs from '../components/home/nearby/Nearbyjobs';
 
 
 const Home = () => {
-
+    const [searchTerm, setSearchTerm] = useState("");
     const router = useRouter();
 
     return (
@@ -29,7 +29,15 @@ const Home = () => {
             />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{flex:1, padding:SIZES.medium}}>
-                    <Welcome/>
+                    <Welcome
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        handlePress={() => {
+                            if (searchTerm) {
+                                router.push(`/search/${searchTerm}`)
+                            }
+                        }}
+                    />
                     <Popularjobs/>
                     <Nearbyjobs/>
                 </View>

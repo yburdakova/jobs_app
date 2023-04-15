@@ -9,12 +9,14 @@ import Company from '../../components/jobdetails/Company';
 import JobTabs from '../../components/jobdetails/JobTabs';
 import Specifics from '../../components/jobdetails/Specifics';
 import About from '../../components/jobdetails/About';
+import Footer from '../../components/jobdetails/Footer';
 
 
 
 const JobDetails = () => {
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(jobTabs[0]);
+
 
     const params = useSearchParams();
     const router = useRouter();
@@ -23,6 +25,8 @@ const JobDetails = () => {
         job_id:params.id
     }) 
     const onRefresh = () => {}
+
+    
 
     const displayTabContent = () => {
         switch (activeTab) {
@@ -37,7 +41,6 @@ const JobDetails = () => {
                 return <Specifics
                             title='Responsibilites' 
                             points ={data[0].job_highlights?.Responsibilities ?? ['N/A']}/>
-
         }
     }
 
@@ -93,7 +96,7 @@ const JobDetails = () => {
                         </View>)
                     }
                 </ScrollView>
-                
+                <Footer job={data[0]} url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results/?distance=50&location=Raleigh,%20NC,%20USA&q=Frontend%20developer'}/>
             </>
         </SafeAreaView>
     );
